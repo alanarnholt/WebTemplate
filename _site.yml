@@ -1,0 +1,26 @@
+name: "WebTemplate"
+output_dir: "."
+navbar:
+  title: "Your Template Page"
+  left:
+    - text: "Software"
+      href: software.html
+    - text: "For Students"
+      href: for-students.html
+   
+    
+  right:
+    - text: ""
+      icon: glyphicon-info-sign
+      href: about.html
+    - icon: fa-github fa-lg
+      href: https://github.com/alanarnholt/WebTemplate.github.io/  
+    
+
+output:
+  html_document:
+    theme: yeti
+    highlight: textmate
+    include:
+      after_body: footer.html
+      
