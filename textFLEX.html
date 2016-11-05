@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Text Annotations</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/htmlwidgets-0.7/htmlwidgets.js"></script>
+<link href="site_libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
+<script src="site_libs/dygraphs-1.1.1/dygraph-combined.js"></script>
+<script src="site_libs/moment-2.8.4/moment.js"></script>
+<script src="site_libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+<script src="site_libs/dygraphs-binding-1.1.1.2/dygraphs.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="site_libs/highlight/textmate.css"
+      type="text/css" />
+<script src="site_libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+.section h2 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h3 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h4 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h6 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Jedi Octocat</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="for-students.html">For Students</a>
+</li>
+<li>
+  <a href="testme.html">Test Me</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">My R Materials</li>
+    <li class="divider"></li>
+    <li>
+      <a href="mypackages.html">My Packages</a>
+    </li>
+    <li>
+      <a href="mybookdown.html">Bookdown</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Heading 2</li>
+    <li>
+      <a href="page_c.html">Page C</a>
+    </li>
+    <li>
+      <a href="page_d.html">Page D</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">
+    <span class="glyphicon glyphicon-info-sign"></span>
+     
+    
+  </a>
+</li>
+<li>
+  <a href="https://github.com/alanarnholt/WebTemplate.github.io/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Text Annotations</h1>
+
+</div>
+
+
+<p>Monthly deaths from bronchitis, emphysema and asthma in the UK, 1974–1979 (Source: P. J. Diggle, 1990, Time Series: A Biostatistical Introduction. Oxford, table A.3)</p>
+<div id="row" class="section level2" data-height="600">
+<h2>Row</h2>
+<div id="all-lung-deaths" class="section level3">
+<h3>All Lung Deaths</h3>
+<pre class="r"><code>dygraph(ldeaths)</code></pre>
+<div id="htmlwidget-c6b27febcad4f4362761" style="width:672px;height:480px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c6b27febcad4f4362761">{"x":{"attrs":{"labels":["month","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}}},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1974-01-01T00:00:00.000Z","1974-02-01T00:00:00.000Z","1974-03-01T00:00:00.000Z","1974-04-01T00:00:00.000Z","1974-05-01T00:00:00.000Z","1974-06-01T00:00:00.000Z","1974-07-01T00:00:00.000Z","1974-08-01T00:00:00.000Z","1974-09-01T00:00:00.000Z","1974-10-01T00:00:00.000Z","1974-11-01T00:00:00.000Z","1974-12-01T00:00:00.000Z","1975-01-01T00:00:00.000Z","1975-02-01T00:00:00.000Z","1975-03-01T00:00:00.000Z","1975-04-01T00:00:00.000Z","1975-05-01T00:00:00.000Z","1975-06-01T00:00:00.000Z","1975-07-01T00:00:00.000Z","1975-08-01T00:00:00.000Z","1975-09-01T00:00:00.000Z","1975-10-01T00:00:00.000Z","1975-11-01T00:00:00.000Z","1975-12-01T00:00:00.000Z","1976-01-01T00:00:00.000Z","1976-02-01T00:00:00.000Z","1976-03-01T00:00:00.000Z","1976-04-01T00:00:00.000Z","1976-05-01T00:00:00.000Z","1976-06-01T00:00:00.000Z","1976-07-01T00:00:00.000Z","1976-08-01T00:00:00.000Z","1976-09-01T00:00:00.000Z","1976-10-01T00:00:00.000Z","1976-11-01T00:00:00.000Z","1976-12-01T00:00:00.000Z","1977-01-01T00:00:00.000Z","1977-02-01T00:00:00.000Z","1977-03-01T00:00:00.000Z","1977-04-01T00:00:00.000Z","1977-05-01T00:00:00.000Z","1977-06-01T00:00:00.000Z","1977-07-01T00:00:00.000Z","1977-08-01T00:00:00.000Z","1977-09-01T00:00:00.000Z","1977-10-01T00:00:00.000Z","1977-11-01T00:00:00.000Z","1977-12-01T00:00:00.000Z","1978-01-01T00:00:00.000Z","1978-02-01T00:00:00.000Z","1978-03-01T00:00:00.000Z","1978-04-01T00:00:00.000Z","1978-05-01T00:00:00.000Z","1978-06-01T00:00:00.000Z","1978-07-01T00:00:00.000Z","1978-08-01T00:00:00.000Z","1978-09-01T00:00:00.000Z","1978-10-01T00:00:00.000Z","1978-11-01T00:00:00.000Z","1978-12-01T00:00:00.000Z","1979-01-01T00:00:00.000Z","1979-02-01T00:00:00.000Z","1979-03-01T00:00:00.000Z","1979-04-01T00:00:00.000Z","1979-05-01T00:00:00.000Z","1979-06-01T00:00:00.000Z","1979-07-01T00:00:00.000Z","1979-08-01T00:00:00.000Z","1979-09-01T00:00:00.000Z","1979-10-01T00:00:00.000Z","1979-11-01T00:00:00.000Z","1979-12-01T00:00:00.000Z"],[3035,2552,2704,2554,2014,1655,1721,1524,1596,2074,2199,2512,2933,2889,2938,2497,1870,1726,1607,1545,1396,1787,2076,2837,2787,3891,3179,2011,1636,1580,1489,1300,1356,1653,2013,2823,3102,2294,2385,2444,1748,1554,1498,1361,1346,1564,1640,2293,2815,3137,2679,1969,1870,1633,1529,1366,1357,1570,1535,2491,3084,2605,2573,2143,1693,1504,1461,1354,1333,1492,1781,1915]]},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-1" class="section level2" data-height="400">
+<h2>Row</h2>
+<div id="male-deaths" class="section level3">
+<h3>Male Deaths</h3>
+<pre class="r"><code>dygraph(mdeaths)</code></pre>
+<div id="htmlwidget-f519c02d545f0367337d" style="width:672px;height:480px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f519c02d545f0367337d">{"x":{"attrs":{"labels":["month","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}}},"scale":"monthly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1974-01-01T00:00:00.000Z","1974-02-01T00:00:00.000Z","1974-03-01T00:00:00.000Z","1974-04-01T00:00:00.000Z","1974-05-01T00:00:00.000Z","1974-06-01T00:00:00.000Z","1974-07-01T00:00:00.000Z","1974-08-01T00:00:00.000Z","1974-09-01T00:00:00.000Z","1974-10-01T00:00:00.000Z","1974-11-01T00:00:00.000Z","1974-12-01T00:00:00.000Z","1975-01-01T00:00:00.000Z","1975-02-01T00:00:00.000Z","1975-03-01T00:00:00.000Z","1975-04-01T00:00:00.000Z","1975-05-01T00:00:00.000Z","1975-06-01T00:00:00.000Z","1975-07-01T00:00:00.000Z","1975-08-01T00:00:00.000Z","1975-09-01T00:00:00.000Z","1975-10-01T00:00:00.000Z","1975-11-01T00:00:00.000Z","1975-12-01T00:00:00.000Z","1976-01-01T00:00:00.000Z","1976-02-01T00:00:00.000Z","1976-03-01T00:00:00.000Z","1976-04-01T00:00:00.000Z","1976-05-01T00:00:00.000Z","1976-06-01T00:00:00.000Z","1976-07-01T00:00:00.000Z","1976-08-01T00:00:00.000Z","1976-09-01T00:00:00.000Z","1976-10-01T00:00:00.000Z","1976-11-01T00:00:00.000Z","1976-12-01T00:00:00.000Z","1977-01-01T00:00:00.000Z","1977-02-01T00:00:00.000Z","1977-03-01T00:00:00.000Z","1977-04-01T00:00:00.000Z","1977-05-01T00:00:00.000Z","1977-06-01T00:00:00.000Z","1977-07-01T00:00:00.000Z","1977-08-01T00:00:00.000Z","1977-09-01T00:00:00.000Z","1977-10-01T00:00:00.000Z","1977-11-01T00:00:00.000Z","1977-12-01T00:00:00.000Z","1978-01-01T00:00:00.000Z","1978-02-01T00:00:00.000Z","1978-03-01T00:00:00.000Z","1978-04-01T00:00:00.000Z","1978-05-01T00:00:00.000Z","1978-06-01T00:00:00.000Z","1978-07-01T00:00:00.000Z","1978-08-01T00:00:00.000Z","1978-09-01T00:00:00.000Z","1978-10-01T00:00:00.000Z","1978-11-01T00:00:00.000Z","1978-12-01T00:00:00.000Z","1979-01-01T00:00:00.000Z","1979-02-01T00:00:00.000Z","1979-03-01T00:00:00.000Z","1979-04-01T00:00:00.000Z","1979-05-01T00:00:00.000Z","1979-06-01T00:00:00.000Z","1979-07-01T00:00:00.000Z","1979-08-01T00:00:00.000Z","1979-09-01T00:00:00.000Z","1979-10-01T00:00:00.000Z","1979-11-01T00:00:00.000Z","1979-12-01T00:00:00.000Z"],[2134,1863,1877,1877,1492,1249,1280,1131,1209,1492,1621,1846,2103,2137,2153,1833,1403,1288,1186,1133,1053,1347,1545,2066,2020,2750,2283,1479,1189,1160,1113,970,999,1208,1467,2059,2240,1634,1722,1801,1246,1162,1087,1013,959,1179,1229,1655,2019,2284,1942,1423,1340,1187,1098,1004,970,1140,1110,1812,2263,1820,1846,1531,1215,1075,1056,975,940,1081,1294,1341]]},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="about-dygraphs" class="section level3">
+<h3>About dygraphs</h3>
+<p>This example makes use of the dygraphs R package. The dygraphs package provides rich facilities for charting time-series data in R. You can use dygraphs at the R console, within R Markdown documents, and within Shiny applications.</p>
+<hr />
+</div>
+</div>
+
+<div id="footer">
+     <p><strong>Jedi Octocat</strong> </br>
+			Master Jedi </br>
+      <a href="mailto:jedi@galaxyfaraway.com"> jedi@galaxyfaraway.com</a>  </br>
+      <img src="images/asu-logo-white-600.png" style="background-color:black; width:180px; float:left;" width =  /> 
+</p>
+        
+        <p><a href="https://jedioctocat.youcanbook.me/" data-ycbm-modal="true"><img src="https://youcanbook.me/resources/pics/ycbm-button.png" style="border-style:none;"/></a>
+        </p>
+      
+        
+        <p>
+    <strong>Mailing Address</strong> <br />      
+    Jedi University<br />
+		Department of Cool Stuff<br />
+		Galaxy Far Away <br />
+		</p> 
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

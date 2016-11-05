@@ -6,6 +6,8 @@ navbar:
   left:
     - text: "For Students"
       href: for-students.html
+    - text: "Test Me"
+      href: testme.html
     - text: "Resources"
       icon: fa-gear
       menu:
