@@ -55,6 +55,18 @@ blockquote {
     background-color: #FFD700;
 }
 
+/* TEST */
+.navbar-default .navbar-nav > .dropdown > a {
+    color: white;
+    background-color: black;
+}
+
+.navbar-default .navbar-nav > .dropdown > a:hover,
+.navbar-default .navbar-nav > .dropdown > a:focus {
+    color: #FFD700;
+    background-color: gray;
+}
+
 
 /* caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
