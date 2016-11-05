@@ -1,14 +1,29 @@
+
 name: "WebTemplate"
 output_dir: "."
 navbar:
-  title: "Your Template Page"
+  title: "Jedi Octocat"
   left:
-    - text: "Software"
-      href: software.html
     - text: "For Students"
       href: for-students.html
-   
-    
+    - text: "Resources"
+      icon: fa-gear
+      menu:
+        - text: "My R Materials"
+        - text: "-----------"
+        - text: "My Packages"
+          href: mypackages.html
+        - text: "Bookdown"
+          href: mybookdown.html
+        - text: "---------"
+        - text: "Heading 2"
+        - text: "Page C"
+          href: page_c.html
+        - text: "Page D"
+          href: page_d.html  
+      
+      
+      
   right:
     - text: ""
       icon: glyphicon-info-sign
@@ -23,4 +38,4 @@ output:
     highlight: textmate
     include:
       after_body: footer.html
-      
+    css: styles.css    
