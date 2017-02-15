@@ -18,11 +18,11 @@ navbar:
         - text: "Bookdown"
           href: mybookdown.html
         - text: "---------"
-        - text: "Heading 2"
+        - text: "More Cool Stuff"
         - text: "Page C"
           href: page_c.html
         - text: "Page D"
-          href: page_d.html  
+          href: page_d.html
       
       
       

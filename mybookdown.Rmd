@@ -5,7 +5,9 @@ output: html_document
 
 
 * [_Passion Driven Statistics_](https://alanarnholt.github.io/PDS-Bookdown2/)
+
 * [Getting used to R, RStudio, and R Markdown](https://ismayc.github.io/rbasics-book/)
+
 * [My Final College Paper](https://ismayc.github.io/thesisdown_book/index.html)
 
 * * *
